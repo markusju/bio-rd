@@ -58,6 +58,8 @@ func (s *Server) Start() error {
 	psnpTransTicker := btime.NewBIOTicker(time.Second * 5)
 	csnpTransTicker := btime.NewBIOTicker(csnpTransmissionInterval)
 	s.lsdbL2.start(decrementTicker, minLSPTransTicker, psnpTransTicker, csnpTransTicker)
+	// Insert Fake Stuff
+	s.lsdbL2.insertFake()
 
 	return nil
 }
