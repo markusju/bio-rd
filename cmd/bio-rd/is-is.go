@@ -33,7 +33,6 @@ func configureProtocolsISIS(isis *config.ISIS) error {
 			return fmt.Errorf("unable to start ISIS server: %w", err)
 		}
 	}
-
 	configuredInterfaces := isisSrv.GetInterfaceNames()
 	for _, ifa := range isis.Interfaces {
 		if strSliceContains(configuredInterfaces, ifa.Name) {
